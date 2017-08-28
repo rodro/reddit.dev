@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/upper/{string}', 'HomeController@uppercase');
+
+
+Route::get('/sayhello/{name}', function($name)
+{
+    if ($name == "Chris") {
+        return Redirect::to('/');
+    }
+    $data = array('name' => $name);
+    return view('my-first-view')->with($data);
 });
