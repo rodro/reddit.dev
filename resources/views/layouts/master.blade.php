@@ -14,7 +14,7 @@
 
 </head>
 <body>
-
+@include('layouts.partials._nav')
 @if (session()->has('successMessage'))
     <div class="alert alert-success">{{ session('successMessage') }}</div>
 @endif

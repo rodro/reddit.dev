@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.master')
+@section('content')
+
     <head>
         <title>Laravel</title>
 
@@ -41,7 +42,7 @@
                 <?php if(isset($fullName)): ?>
                     <div class="title">Hi, <?= $fullName ?>!</div>
                 <?php else :?>
-                    <div class="title">Hello, World!</div>
+                    <div class="title">Welcome to Char.red</div>
                 <?php endif; ?>
 
                 <form method="POST" action="/">
@@ -57,4 +58,5 @@
             </div>
         </div>
     </body>
-</html>
+
+@stop
