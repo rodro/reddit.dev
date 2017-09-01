@@ -1,60 +1,54 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Char.red Reddit</a>
+  </div>
 
-<nav class="navbar navbar-default navbar-inverse">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Char.red reddit</a>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class=""><a href="/posts">Posts</a></li>
+      <li><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Posts <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/posts">All post</a></li>
+          <li><a href="/posts/create">Create</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="col-sm-3 col-md-3">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
         </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="{{ (Request::is('/') ? 'active' : '') }}">
-                    <a href="{{ url('') }}"><i class="fa fa-home"></i> Home</a>
-                </li>
-                <li class="{{ (Request::is('articles') ? 'active' : '') }}">
-                    <a href="{{ url('articles') }}">Articles</a>
-                </li>
-                <li class="{{ (Request::is('about') ? 'active' : '') }}">
-                    <a href="{{ url('about') }}">About</a>
-                </li>
-                <li class="{{ (Request::is('contact') ? 'active' : '') }}">
-                    <a href="{{ url('contact') }}">Contact</a>
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                @if (Auth::guest())
-                    <li class="{{ (Request::is('auth/login') ? 'active' : '') }}"><a href="{{ url('auth/login') }}"><i
-                                    class="fa fa-sign-in"></i> Login</a></li>
-                    <li class="{{ (Request::is('auth/register') ? 'active' : '') }}"><a
-                                href="{{ url('auth/register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name }} <i
-                                    class="fa fa-caret-down"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            @if(Auth::check())
-                                @if(Auth::user()->admin==1)
-                                    <li>
-                                        <a href="{{ url('admin/dashboard') }}"><i class="fa fa-tachometer"></i> Admin Dashboard</a>
-                                    </li>
-                                @endif
-                                <li role="presentation" class="divider"></li>
-                            @endif
-                            <li>
-                                <a href="{{ url('auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
-            </ul>
-        </div>
+        </form>
     </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Settings</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
 </nav>

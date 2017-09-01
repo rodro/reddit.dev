@@ -1,5 +1,3 @@
-@extends('layouts.master')
-@section('content')
 
     <head>
         <title>Laravel</title>
@@ -15,20 +13,20 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                display: table;
+                /*display: table;*/
                 font-weight: 100;
                 font-family: 'Lato';
             }
 
             .container {
                 text-align: center;
-                display: table-cell;
+               /* display: table-cell;*/
                 vertical-align: middle;
             }
 
             .content {
                 text-align: center;
-                display: inline-block;
+               /* display: inline-block;*/
             }
 
             .title {
@@ -37,12 +35,13 @@
         </style>
     </head>
     <body>
+    @include('layouts.partials._nav')
         <div class="container">
             <div class="content">
                 <?php if(isset($fullName)): ?>
                     <div class="title">Hi, <?= $fullName ?>!</div>
                 <?php else :?>
-                    <div class="title">Welcome to Char.red</div>
+                    <div class="title">Welcome to Char.red!</div>
                 <?php endif; ?>
 
                 <form method="POST" action="/">
@@ -59,4 +58,3 @@
         </div>
     </body>
 
-@stop

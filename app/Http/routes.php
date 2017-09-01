@@ -44,7 +44,7 @@ Route::get('zero', 'HomeController@resetToZero');
 
 // Route::get('orm-test', function(){
 
-// adding a new resource
+// adding a new resource	
 	// $dog = new App\Models\Dog();
 	// $dog->name = 'Sparky';
 	// $dog->breed='Pug';
@@ -80,3 +80,4 @@ Route::get('zero', 'HomeController@resetToZero');
 	// $dog->delete();
 
 // });
+
